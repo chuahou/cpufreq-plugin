@@ -83,8 +83,10 @@ forAllCpus op = getCpus >>= mapM_ op
 main :: IO ()
 main = do args <- getArgs
           case args of
-            ["increase"] -> changeFreq (freqIncr)
-            ["decrease"] -> changeFreq (- freqIncr)
-            ["gov"]      -> nextGovernor
-            _            -> format <$> getCurrentPolicy >>= putStrLn
+            ["increase"]    -> changeFreq (freqIncr)
+            ["increase", x] -> changeFreq (read x :: FreqMhz)
+            ["decrease"]    -> changeFreq (- freqIncr)
+            ["decrease", x] -> changeFreq (- read x :: FreqMhz)
+            ["gov"]         -> nextGovernor
+            _               -> format <$> getCurrentPolicy >>= putStrLn
     where format (f, g) = show ((fromIntegral f :: Float) / 1000) <> "GHz " <> g
