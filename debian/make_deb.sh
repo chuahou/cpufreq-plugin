@@ -36,6 +36,7 @@ stack install --local-bin-path $BUILD_DIR/usr/bin
 # copy other files
 cp copyright $BUILD_DIR/usr/share/doc/cpufreq-plugin/copyright
 cp cpufreq $BUILD_DIR/etc/sudoers.d
+sudo chown root:root $BUILD_DIR/etc/sudoers.d/cpufreq
 
 # get installed size
 INSTALLED_SIZE=$(du -k -s $BUILD_DIR/usr | awk '{ print $1 }')
@@ -48,7 +49,8 @@ sed "s/VERSION/$VERSION/" control.in | \
 	> $BUILD_DIR/DEBIAN/control
 
 # build deb
-dpkg-deb -Zgzip --build $BUILD_DIR
+sudo dpkg-deb -Zgzip --build $BUILD_DIR
+sudo chown $USER:$USER build.deb
 dpkg-name build.deb
 
 cd -
