@@ -1,0 +1,3 @@
+%sudo ALL = NOPASSWD: /usr/bin/cpufreq-plugin increase
+%sudo ALL = NOPASSWD: /usr/bin/cpufreq-plugin decrease
+%sudo ALL = NOPASSWD: /usr/bin/cpufreq-plugin gov

@@ -9,6 +9,9 @@ set -e
 # get into script directory
 cd $(dirname $0)
 
+# remove existing debs
+rm *.deb || true
+
 # get metadata
 case "$(uname -m)" in
 	x86_64) ARCHITECTURE=amd64 ;;
@@ -23,14 +26,16 @@ BUILD_DIR=build
 rm -rf $BUILD_DIR
 mkdir -p $BUILD_DIR/usr/bin
 mkdir -p $BUILD_DIR/usr/share/doc/cpufreq-plugin
+mkdir -p $BUILD_DIR/etc/sudoers.d
 
 # build binaries
 stack clean
 stack build
 stack install --local-bin-path $BUILD_DIR/usr/bin
 
-# copy copyright
+# copy other files
 cp copyright $BUILD_DIR/usr/share/doc/cpufreq-plugin/copyright
+cp cpufreq $BUILD_DIR/etc/sudoers.d
 
 # get installed size
 INSTALLED_SIZE=$(du -k -s $BUILD_DIR/usr | awk '{ print $1 }')
