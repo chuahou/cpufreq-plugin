@@ -1,0 +1,7 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: cpufreq-plugin
+Source: https://github.com/chuahou/cpufreq-plugin
+
+Files: *
+Copyright: 2020 Chua Hou <human+github@chuahou.dev>
+License: MIT

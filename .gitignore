@@ -1,0 +1,3 @@
+.stack-work/
+debian/build/
+debian/*.deb
