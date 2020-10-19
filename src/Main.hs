@@ -1,8 +1,9 @@
 -- SPDX-License-Identifier: MIT
 -- Copyright (c) 2020 Chua Hou
 
-import           Data.List      (elemIndex)
-import qualified System.Process as P
+import           Data.List          (elemIndex)
+import           System.Environment (getArgs)
+import qualified System.Process     as P
 
 -- | We store frequencies in terms of MHz.
 -- 1 GHz = 1000 MHz
@@ -80,4 +81,10 @@ forAllCpus op = getCpus >>= mapM_ op
 
 -- | Entry point that ensures we have at least 2 arguments.
 main :: IO ()
-main = changeFreq (- freqIncr)
+main = do args <- getArgs
+          case args of
+            ["increase"] -> changeFreq (freqIncr)
+            ["decrease"] -> changeFreq (- freqIncr)
+            ["gov"]      -> nextGovernor
+            _            -> format <$> getCurrentPolicy >>= putStrLn
+    where format (f, g) = show ((fromIntegral f :: Float) / 1000) <> "GHz " <> g
