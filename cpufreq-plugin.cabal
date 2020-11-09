@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 5447c1c3cd3756bd1e5f38d62ed1b8e0a4b6ac09a2c03ba13eb9148894ad5034
+-- hash: 037c0d3c6d9ad1096c71ff94d98c50c08f5cbed37227c0d37233bdd571413672
 
 name:           cpufreq-plugin
 version:        0.1.0.0
@@ -21,6 +21,7 @@ license-file:   LICENSE
 build-type:     Simple
 extra-source-files:
     README.rst
+    sudoers
 
 source-repository head
   type: git

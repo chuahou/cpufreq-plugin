@@ -1,0 +1,16 @@
+Source:            cpufreq-plugin
+Maintainer:        Chua Hou <human+github@chuahou.dev>
+Section:           admin
+Priority:          optional
+Standards-Version: 3.9.2
+Build-Depends:     debhelper (>= 11)
+Homepage:          https://github.com/chuahou/cpufreq-plugin
+
+Package:      cpufreq-plugin
+Architecture: amd64
+Depends:      ${shlibs:Depends}, ${misc:Depends},
+              libc6, libgmp10, zlib1g, cpufrequtils
+Description:  cpufrequtils query and adjustment plugin
+ A small program used for easily querying and adjusting CPU max frequency and
+ governor using cpufrequtils, intended to be used as a plugin for bars such as
+ polybar or i3blocks.

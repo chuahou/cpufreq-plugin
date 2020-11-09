@@ -12,6 +12,7 @@ description :
 
 extra-source-files:
 - README.rst
+- sudoers
 
 dependencies:
 - base    ^>= 4.13.0.0
