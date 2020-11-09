@@ -4,10 +4,10 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 037c0d3c6d9ad1096c71ff94d98c50c08f5cbed37227c0d37233bdd571413672
+-- hash: ecd4b7a9a925b3d83dc7c5142b3d6adaafc100e526945f4a617efa8fe7066417
 
 name:           cpufreq-plugin
-version:        0.1.0.0
+version:        0.2.0.0
 synopsis:       cpufrequtils query and adjustment plugin
 description:    A small program used for easily querying and adjusting CPU max frequency and governor using cpufrequtils, intended to be used as a plugin for bars such as polybar or i3blocks.
 category:       program
