@@ -1,14 +1,21 @@
-name      : cpufreq-plugin
-version   : 0.1.0.0
-author    : "Chua Hou <human+github@chuahou.dev>"
-copyright : "2020 Chua Hou"
+name        : cpufreq-plugin
+version     : 0.1.0.0
+author      : "Chua Hou <human+github@chuahou.dev>"
+copyright   : "2020 Chua Hou"
+category    : program
+synopsis    : cpufrequtils query and adjustment plugin
+github      : chuahou/cpufreq-plugin
+description :
+ A small program used for easily querying and adjusting CPU max frequency and
+ governor using cpufrequtils, intended to be used as a plugin for bars such as
+ polybar or i3blocks.
 
 extra-source-files:
 - README.rst
 
 dependencies:
-- base
-- process
+- base    ^>= 4.13.0.0
+- process ^>= 1.6.10.0
 
 ghc-options: -Wall
 

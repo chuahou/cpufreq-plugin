@@ -1,13 +1,18 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.33.0.
+-- This file has been generated from package.yaml by hpack version 0.34.2.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 2d1725178cd18d81334cce61f18ff3e9a720f6f49fcda6cd0ae7f4387229b0e3
+-- hash: 5447c1c3cd3756bd1e5f38d62ed1b8e0a4b6ac09a2c03ba13eb9148894ad5034
 
 name:           cpufreq-plugin
 version:        0.1.0.0
+synopsis:       cpufrequtils query and adjustment plugin
+description:    A small program used for easily querying and adjusting CPU max frequency and governor using cpufrequtils, intended to be used as a plugin for bars such as polybar or i3blocks.
+category:       program
+homepage:       https://github.com/chuahou/cpufreq-plugin#readme
+bug-reports:    https://github.com/chuahou/cpufreq-plugin/issues
 author:         Chua Hou <human+github@chuahou.dev>
 maintainer:     Chua Hou <human+github@chuahou.dev>
 copyright:      2020 Chua Hou
@@ -17,6 +22,10 @@ build-type:     Simple
 extra-source-files:
     README.rst
 
+source-repository head
+  type: git
+  location: https://github.com/chuahou/cpufreq-plugin
+
 executable cpufreq-plugin
   main-is: Main.hs
   other-modules:
@@ -25,6 +34,6 @@ executable cpufreq-plugin
       src
   ghc-options: -Wall
   build-depends:
-      base
-    , process
+      base >=4.13.0.0 && <4.14
+    , process >=1.6.10.0 && <1.7
   default-language: Haskell2010

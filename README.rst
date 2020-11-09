@@ -41,8 +41,8 @@ Dependencies
 ============
 
 * cpufrequtils (``apt-get install cpufrequtils``)
-* stack
-* ghc-8.6.5
+* cabal
+* ghc-8.8.4
 
 .. |License: MIT| image:: https://img.shields.io/badge/License-MIT-yellow.svg
 	:target: https://opensource.org/licenses/MIT
