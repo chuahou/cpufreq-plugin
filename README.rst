@@ -16,9 +16,6 @@ Warnings
 The debian package is **DANGEROUS**. It will install a file in
 /etc/sudoers.d, which can potentially break your sudo system!
 
-Building the debian package requires sudo, as it changes permissions for
-the sudoers file appropriate in the build script.
-
 Usage
 ======
 
